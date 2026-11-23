@@ -73,6 +73,10 @@ class NonmissingAnemoiDatasetVariableSchema(BaseModel):
     "The anemoi-datasets variable to use."
 
 
+class GlobalResolutionMaskSchema(BaseModel):
+    target_: Literal["anemoi.graphs.nodes.attributes.GlobalResolutionMask"] = Field(..., alias="_target_")
+    "Implementation of the global resolution mask from anemoi.graphs.nodes.attributes."
+
 SingleAttributeSchema = (
     PlanarAreaWeightSchema
     | MaskedPlanarAreaWeightsSchema
@@ -80,6 +84,7 @@ SingleAttributeSchema = (
     | CutOutMaskSchema
     | GridsMaskSchema
     | NonmissingAnemoiDatasetVariableSchema
+    | GlobalResolutionMaskSchema
 )
 
 
